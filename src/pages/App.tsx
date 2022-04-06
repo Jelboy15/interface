@@ -19,6 +19,7 @@ import { RedirectDuplicateTokenIds } from './AddLiquidity/redirects'
 import { RedirectDuplicateTokenIdsV2 } from './AddLiquidityV2/redirects'
 import Earn from './Earn'
 import Manage from './Earn/Manage'
+import Feed from './Feed'
 import MigrateV2 from './MigrateV2'
 import MigrateV2Pair from './MigrateV2/MigrateV2Pair'
 import Pool from './Pool'
@@ -94,6 +95,7 @@ export default function App() {
                 </Route>
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
                 <Route exact strict path="/uni" component={Earn} />
+                <Route exact strict path="/feed" component={Feed} />
                 <Route exact strict path="/uni/:currencyIdA/:currencyIdB" component={Manage} />
 
                 <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
@@ -103,6 +105,7 @@ export default function App() {
                 <Route exact strict path="/pool/v2/find" component={PoolFinder} />
                 <Route exact strict path="/pool/v2" component={PoolV2} />
                 <Route exact strict path="/pool" component={Pool} />
+
                 <Route exact strict path="/pool/:tokenId" component={PositionPage} />
 
                 <Route
